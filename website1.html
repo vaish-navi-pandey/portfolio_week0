@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Kaushan+Script&family=PT+Sans:ital@1&family=Playfair&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>Portfolio</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color:#2F2FA2;
+            background-size:cover;
+            height:100vh;
+            background-position: center;
+        }
+        header{
+            width:100%;
+            height:80px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 99;
+            box-shadow: 0 0 10px black;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .home{
+            height:100vh;
+            width:100%;
+        }
+        i{
+            color:white;
+            cursor:pointer;
+        }
+        header .name{
+            flex:1;
+            color:#F64C72;
+            font-family:  'Kaushan Script', cursive;
+            margin-left: 55px;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        header ul{
+            flex:2;
+            display:flex;
+            margin-left: 300px;
+            justify-content: space-evenly;
+            align-items: center;
+        
+        }
+        header ul li{
+            list-style: none;
+        }
+        
+        header ul li a{
+            text-decoration: none;
+            color:white;
+            padding: 20px 25px;
+        }
+        header ul li a:active{
+            background-color:#F64C72;
+            color: white;
+            border-radius: 10px;
+
+        }
+        header ul li a:hover{
+            background-color:#F64C72;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        header .list{
+            font-size:2em;
+            display:none;
+        }
+        
+        .content{
+            position:absolute;
+            top:40%;
+            left:10%;
+            height: 100vh;
+            color:white;
+            display: flex;
+
+        }
+        .content h2{
+            font-size: 40px;;
+        }
+        .content h1{
+            font-size: 60px;
+            color: #F64C72;
+        }
+        .content h3{
+            font-size: 30px;
+            font-weight: 200;
+        }
+        .content span{
+            color: rgb(0, 0, 0);
+        }
+
+        @media(max-width:1000px) {
+            header ul{
+                position:fixed;
+                top:100px;
+                display:flex;
+                background: rgba(0,0,0,0.5);
+                margin-left: 0px;
+                height:calc(100vh - 100px);
+                width:20%;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .box{
+            display:block;
+            width:400px ;
+            height:40px;
+            font-size: 15px;
+            color: rgb(163, 249, 255);
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            border: 1px black solid;
+            border-radius: 5px;
+         }
+
+        .writedown{
+            display: flex;
+            flex-flow: column;
+            margin:30px ;
+        }
+        .about{
+            width:100%;
+            height:100vh;
+            padding: 80px 0px;
+            background-color: (128, 22, 71);
+            color: antiquewhite;
+            background-size:cover;
+            height:100vh;
+            background-position: center;
+        }
+        .about img{
+            height:auto;
+            margin-top: 100px;
+            width: 430px;
+            border-radius: 50%;;
+        }
+        .knowme{
+            width: 550px;
+            margin:10px;
+        }
+        .knowme button{
+            margin: 10px 0px;
+        }
+        .knowme h2{
+            font-size: 40px;
+            font-family:'Kaushan Script', cursive ;
+            color: #F64C72;
+        }
+        .knowme h3{
+            font-weight: 500;
+            margin-top: 10px;
+            line-height: 1.5;
+            
+        }
+        .aboutme{
+            width:1130px;
+            max-width:95%;
+            margin:0 auto;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        button{
+            background-color: white;
+            color:black;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 9px 12px;
+            transition: 0.2s;
+        }
+        button:hover{
+            background-color: #F64C72;
+            color: white;
+            border: 0.8px black solid;
+        }
+        .services{
+            width:100%;
+            height:100vh;
+            padding: 80px 0px;
+            color: antiquewhite;
+            background-size:cover;
+            display:flex;
+            flex-direction: column;
+            background-position: center;
+            align-self: center;
+            align-content: center;
+
+        }
+        .title h1{
+            color:#F64C72;
+            font-size: 65px;
+            width:1130px;
+            margin:30px auto;
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+        }
+        .box2{
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            
+        }
+        .card{
+            padding:20px 35px;
+            display: flex;
+            margin: 15px; 
+            align-content: center;
+            text-align: center;
+             
+        }
+        .card i{
+            font-size: 50px;
+            display: block;
+            text-align: center;
+            margin: 25px 0px;
+            color: #F64C72;
+            border-width: 30px;
+
+    
+        }
+        
+        .self{
+            position: relative;
+            left:150px;
+            bottom: 80px;
+            border-radius: 50%;
+
+        }
+        .title h1{
+            color:#F64C72;
+            font-size: 65px;
+            width:1130px;
+            margin:30px auto;
+            align-content: center;
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        .para{
+            margin:10px;
+            padding: 10px;
+            border-radius: 20px ;
+            border-color: black;
+            background-color: rgba(56, 56, 56, 0.5);
+        }
+        .para p{
+            margin-bottom: 20px;
+        }
+        .para h4{
+            font-size: 25px;
+        }
+        .card .button{
+            background-color: white;
+            color:black;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 9px 12px;
+            transition: 0.2s;
+            
+        }
+        .card .button:hover{
+            background-color: #F64C72;
+            color: white;
+            border: 0.8px black solid;
+
+        }
+        .contact{
+            width:100%;
+            height:100vh;
+            padding: 200px;
+            color: antiquewhite;
+            background-size:cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+
+
+        }
+        
+        .contactus h1{
+            color:#F64C72;
+            font-size: 65px;
+            width:1130px;
+            margin:30px auto;
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+        }
+        
+        .footer{
+            width:100%;
+            height:50px;
+            padding: 0px 10px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            bottom:0;
+            position: fixed;
+            z-index: 99;
+            box-shadow: 0 0 10px black;
+            background: rgba(14, 8, 8, 0.913);
+            color: antiquewhite;
+        }
+        .fbtn{
+            background-color: white;
+            color:black;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 9px 12px;
+            transition: 0.2s;
+        }
+        .fbtn:hover{
+            background-color: #F64C72;
+            color: white;
+            border: 0.8px black solid; 
+        }
+        .box{
+            text-align: left;
+        }
+        #submit{
+            text-align: center;
+            font-size: 25px;
+            color:white;
+        }
+        #submit:hover{
+            background-color: #F64C72;
+            color:white;
+        }
+            
+</style>
+</head>
+<body>
+    <div id="home" class="home">
+    <header class="header">
+        <div class="name">Vaishnavi</div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#about">About</a></li>
+            <li class="item"><a href="#services">Services</a></li>
+            <li class="item"><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+        </ul>
+        <div class="list">
+                <label for="option"><i class="fa fa-bars"></i></label>      
+        </div>
+        </div>
+    </header>
+    <div id="content" class="content">
+        <div>
+        <h2>Hello! I am </h2>
+        <h1>VAISHNAVI PANDEY</h1>
+        <h3>I am a student and a web developer.</h3>
+        </div>
+        <div><img class="self" src="https://shorturl.at/BHKMU"></div>
+    </div>
+    
+    
+    </div>
+
+    <section id="about" class="about">
+        <div class="aboutme">
+            <img class="aboutme_img" src="https://shorturl.at/dksK2">
+            <div class="knowme">
+                <h2>About  Me</h2>
+                <h3>I am a student at IIT(BHU) Varanasi and am currently learning web development.
+                I am looking forward to work on projects and am ready to explore more in this field!</h3>
+                <button type="button">Know More</button>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services">  
+        <div class="title"><h1>Services</h1>
+        </div>
+        <div class="box2">
+            <div class="card">
+                <div class="para">
+                <i class="fa fa-bars"></i>
+                <h4>Web Development</h4>
+                    <p>
+                        Website development is a catch-all term for the work that goes into building a website. This includes everything from markup and coding to scripting, network configuration, and CMS development.
+                    </p>
+                    <p style="text-align:center";>
+                    <a class="button" href="#">Read More</a></p>
+                </div>
+                <div class="para">
+                <i class="fa fa-user"></i>
+                <h4>Choose Us</h4>
+                    <p>
+                        Start with a custom domain and get your business online now. Bring your free website and landing pages under one domain to keep your brand in harmony.
+
+                    </p>
+                    <p style="text-align:center";>
+                    <a class="button" href="#">Read More</a></p>
+                </div>
+                <div class="para">
+                <i class="fa fa-question-circle"></i>
+                <h4>Why Web Development?</h4>
+                    <p>
+                        A well-designed website can help you form a good impression on your prospective customers. It can also help you nurture your leads and get more conversions. But, more importantly, it provides good user experience and helps your website visitors access and navigate your website with ease.
+                    </p>
+                    <p style="text-align:center";>
+                    <a class="button" href="#">Read More</a></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="contact" class="contact">
+        <div class="contactus"><h1>Contact Us</h1></div>
+        <div class="writedown">
+            <form>
+                <input class="box" type="text" name="name" id="person" placeholder="Enter your name">
+                <input class="box" type="email" name="email" id="mail" placeholder="Enter your mail id">
+                <input class="box" type="text" name="write" id="query" placeholder="Enter your queries">
+                <input class="box" type="submit" name="submit" id="submit" value="Submit">
+            </form>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div>
+            Email us : vaishnavi3123@gmail.com
+        </div>
+        <div>
+            <button class="fbtn">HIRE US</button>
+        </div>
+    </footer>
+</body>
+</html> 
